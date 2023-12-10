@@ -5,7 +5,7 @@
 
 .game-board {
     display: grid;
-    margin: 0 1rem;
+    margin: 2rem 1rem;
 }
 
 .button-try {

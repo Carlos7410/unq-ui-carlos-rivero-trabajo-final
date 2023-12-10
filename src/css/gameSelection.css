@@ -1,0 +1,82 @@
+
+.selection-box {
+    margin-right: 2%;
+    height: 75%;
+    width: 260px;
+    border: 2px solid black ;
+    
+}
+
+.up-row-selection {
+    flex: 1;
+    flex-direction: row;
+}
+
+.down-row-selection {
+    flex: 1;
+    flex-direction: row;
+}
+
+.image-ship2 {
+    height: 180px;
+    width: 60px;
+    padding: 60px 10px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.image-ship3 {
+    height: 220px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 80px;
+
+    cursor: pointer;
+}
+
+.image-ship4 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    height: 250px;
+    width: 80px;
+
+    cursor: pointer;
+}
+
+.image-ship5 {
+    height: 300px;
+    width: 80px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.selected {
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.positioned {
+    cursor: auto;
+    filter:sepia(80%);
+    border: 3px solid black;
+    border-radius: 3px;
+    pointer-events: none;
+}
+
+.mini-ship {
+    position: absolute;
+    height: 160px;
+    width: auto;
+    opacity: 0.75;
+}
+
+.mini-ship.vertical {
+    transform: rotate(0deg);
+}
+
+.mini-ship.horizontal {
+    transform: rotate(270deg);
+    transform-origin: 100% 0;
+    margin-left: -20px;
+    margin-top: 10px;
+}
