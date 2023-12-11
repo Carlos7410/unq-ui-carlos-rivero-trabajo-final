@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import "./css/gameBoard.css"
 import "./css/shipsOnBoard.css"
 import SelectionShipSection from "./components/SelectionShip"
+import { useNavigate } from "react-router-dom"
 
 const HomeGame = () => {
 
@@ -14,6 +15,7 @@ const HomeGame = () => {
         return boardInitial
     }
 
+    const navigate = useNavigate()
     const [board, setBoard] = useState(initializeGameBoard())
     const [positionedShips, setPositionedShips] = useState([])
     const [shipSelectioned, setShipSelectioned] = useState('')
@@ -53,8 +55,10 @@ const HomeGame = () => {
             const sectionToCheck = board.slice(row, row + shipLength)
             return sectionToCheck.every(row => row[column] === 1)
         } else {
-            const rowToCheck = board[row]
-            rowToCheck.slice(column, column + shipLength)
+            var rowToCheck = board[row]
+            //console.log('Row taken :', rowToCheck)
+            rowToCheck = rowToCheck.slice(column, column + shipLength)
+            console.log('Row cut :', rowToCheck)
             return rowToCheck.every(cell => cell === 1)
         }
     }
@@ -119,6 +123,12 @@ const HomeGame = () => {
         } 
     }
 
+    const gameStart = () => {
+        const boardToString = JSON.stringify(board);
+        const positionsToString = JSON.stringify(shipPositions);
+        navigate(`/gameplay?board=${encodeURIComponent(boardToString)}&positions=${encodeURIComponent(positionsToString)}`)
+    }
+
     return (
         <div className="interface-screen">
              <h2 className="" style={{}}>Presione la tecla 'f' para cambiar la orientación del barco a colocar</h2>
@@ -163,11 +173,14 @@ const HomeGame = () => {
                 <p>No hay espacio para el barco o hay un barco bloqueando el paso</p> 
                 : <></>}
             <div>
-                <p>Fuck this will take time</p>
                 <button onClick={() => console.log(shipPositions) } className="button-try"> Try positions</button>
             </div> 
             <div>
-                <button onClick={() => console.log(board) } className="button-try"> Try rows</button>
+                {positionedShips.length === 4 ?
+                <button onClick={() => gameStart() } className="button-try"> Iniciar </button>
+                :
+                <></>
+                }
             </div> 
         </div>
         

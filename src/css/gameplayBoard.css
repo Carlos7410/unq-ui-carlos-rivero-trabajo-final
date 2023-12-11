@@ -1,0 +1,20 @@
+
+.additional-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 400px;
+    margin-bottom: -25px;
+}
+
+.info-board {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.separation-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+}
