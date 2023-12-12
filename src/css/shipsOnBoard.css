@@ -1,61 +1,72 @@
 
 .ship-2.horizontal {
+    position: absolute;
     height: 125px;
     width: 35px;
-    margin-left: 28px;
-    margin-top: -38px;
+    margin-left: 15px;
+    margin-top: -65px;
     transform: rotate(270deg);
 }
 
 .ship-2.vertical {
-    margin-left: -5px;
-    margin-top: -5px;
+    position: absolute;
+    margin-left: -16px;
+    margin-top: -30px;
     height: 125px;
     width: 34px;
     transform: rotate(0deg);
 }
 
 .ship-3.horizontal {
+    position: absolute;
     height: 185px;
     width: 45px;
-    margin-left: 55px;
-    margin-top: -70px;
+    margin-left: 45px;
+    margin-top: -90px;
     transform: rotate(270deg);
 }
 
 .ship-3.vertical {
-    margin-left: -10px;
-    margin-top: -4px;
+    position: absolute;
+    margin-left: -22px;
+    margin-top: -26px;
     height: 185px;
     width: 45px;
     transform: rotate(0deg);
 }
 
 .ship-4.horizontal {
+    position: absolute;
     height: 245px;
     width: 60px;
-    margin-left: 80px;
-    margin-top: -100px;
+    margin-left: 70px;
+    margin-top: -122px;
     transform: rotate(270deg);
 }
 
 .ship-4.vertical {
-    margin-left: -16px;
+    position: absolute;
+    margin-left: -30px;
+    margin-top: -22px;
     height: 245px;
     width: 60px;
     transform: rotate(0deg);
+    transform-origin: 100% 0;
 }
 
 .ship-5.horizontal {
+    position: absolute;
     height: 310px;
     width: 70px;
-    margin-left: 110px;
-    margin-top: -135px;
+    margin-left: 100px;
+    margin-top: -157px;
     transform: rotate(270deg);
 }
 
 .ship-5.vertical {
-    margin-left: -20px;
+    position: absolute;
+    margin-left: -32px;
+    margin-top: -20px;
     height: 310px;
     width: 70px;
     transform: rotate(0deg);
