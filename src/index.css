@@ -29,6 +29,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: #CFCFCF;
+  border-left: 10px solid #1a1a1a;
+  border-right: 10px solid #1a1a1a;
 }
 
 h1 {

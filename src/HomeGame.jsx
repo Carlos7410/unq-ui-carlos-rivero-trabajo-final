@@ -131,7 +131,8 @@ const HomeGame = () => {
 
     return (
         <div className="interface-screen">
-             <h2 className="" style={{}}>Presione la tecla 'f' para cambiar la orientación del barco a colocar</h2>
+            <h2 className="title-game">Coloque los barcos del recuadro en el tablero</h2>
+            <h3 className="subtitle-game">Presione la tecla 'f' para cambiar la orientación del barco a colocar</h3>
             <div className="screen-initial">
                 <SelectionShipSection onPositionedShip={setShipSelectioned} positionedShips={positionedShips} verticalPos={verticalShip}/>
                 <div className="game-board">
@@ -153,31 +154,14 @@ const HomeGame = () => {
                             ))}
                         </div>
                     ))}
-                </div>
-                <div className="game-board">
-                    {board.map((row, rowIndex) => (
-                        <div key={rowIndex} className="row">
-                            {row.map((cell, index) => (
-                                <button
-                                    key={index}
-                                    onClick={() => handleBlockClick(rowIndex, index)}
-                                    className="cell-enemy">
-                                    #2
-                                </button>
-                            ))}
-                        </div>
-                    ))}
                 </div>                  
             </div>
             {fitError ? 
-                <p>No hay espacio para el barco o hay un barco bloqueando el paso</p> 
+                <p style={{color:'black', fontSize:'18px'}}>No hay espacio para el barco o hay un barco bloqueando el paso</p> 
                 : <></>}
             <div>
-                <button onClick={() => console.log(shipPositions) } className="button-try"> Try positions</button>
-            </div> 
-            <div>
                 {positionedShips.length === 4 ?
-                <button onClick={() => gameStart() } className="button-try"> Iniciar </button>
+                <button onClick={() => gameStart() } className="button-try"> Iniciar partida </button>
                 :
                 <></>
                 }
@@ -188,3 +172,6 @@ const HomeGame = () => {
 }
 
 export default HomeGame
+//<div>
+//                <button onClick={() => console.log(shipPositions) } className="button-try"> Try positions</button>
+//            </div> 

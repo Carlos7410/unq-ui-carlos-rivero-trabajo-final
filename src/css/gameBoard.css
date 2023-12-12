@@ -9,9 +9,22 @@
 }
 
 .button-try {
-    width: 160px;
-    height: 40px;
+    width: 180px;
+    height: 45px;
+    font-size: 18px;
     background-color: aqua;
+    margin-bottom: 10px;
+}
+
+.title-game {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.subtitle-game {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-bottom: 0.5rem;
 }
 
 .row {

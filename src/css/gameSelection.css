@@ -77,6 +77,6 @@
 .mini-ship.horizontal {
     transform: rotate(270deg);
     transform-origin: 100% 0;
-    margin-left: -20px;
+    margin-left: -25px;
     margin-top: 10px;
 }
