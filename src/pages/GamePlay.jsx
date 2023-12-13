@@ -75,11 +75,8 @@ const GamePlay = () => {
         if (playerBoard[row][column] != 1) {
             setCountEnemyHit((countEnemyHit) => countEnemyHit + 1)
         }
-        console.log('Actual hits by enemy:', countEnemyHit)
         setCellHitsByEnemy([...cellHitsByEnemy, {row,column}])
-
         setCountAttack((countAttack) => countAttack + 1)
-        console.log("Remaining pos: ", availablePositions)
     }
 
 
@@ -90,7 +87,6 @@ const GamePlay = () => {
         }
         setCellHitsByPlayer([...cellHitsByPlayer, { row, column }]);
 
-        console.log('Actual hits by player:', countPlayerHit)
         handleCPUAttack()
     }
 
@@ -166,18 +162,13 @@ const GamePlay = () => {
                 </div> 
             </div>
             
-            <div className="separation-button">
-                <button onClick={() => console.log(enemyBoard) } className="button-try"> Enemy board</button>
-                <button onClick={() => console.log(playerBoard) } className="button-try"> Player board</button>
-            </div>
-
-            {countPlayerHit >= 14 ?
+            {countPlayerHit === 14 ?
             <div className="final-result">
                 <p className="result" >GANASTE</p>
                 <button onClick={() => restartGame()} className="button-end">JUGAR DE NUEVO</button>
             </div>
             :<></>}
-            {countEnemyHit >= 14 ?
+            {countEnemyHit === 14 && countPlayerHit < 14 ?
             <div className="final-result">
                 <p className="result">PERDISTE</p>
                 <button onClick={() => restartGame()} className="button-end">JUGAR DE NUEVO</button>

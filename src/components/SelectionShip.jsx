@@ -23,12 +23,9 @@ const SelectionShipSection = ({onPositionedShip, positionedShips, verticalPos}) 
 
 
     useEffect(() => {
-      console.log('positionedShips:', positionedShips);
-      console.log('selectedShip:', selectedShip);
       if (positionedShips.includes(selectedShip)) {
         document.removeEventListener('mousemove', handleMouseMove);
         setSelectedShip('')
-        console.log('selectedShip:', selectedShip);
       }
     }, [positionedShips]);
 
@@ -48,12 +45,12 @@ const SelectionShipSection = ({onPositionedShip, positionedShips, verticalPos}) 
             </div>
 
             <div className='down-row-selection'>
-              <img src='./src/assets/warship-[5].png' alt='5' 
-                  className={`image-ship5 ${positionedShips.includes(5) ? 'positioned' : ''} ${selectedShip === 5 ? 'selected':''}`}
-                  onClick={(event) => handleShipClick(5, event)}/>
               <img src='./src/assets/warship-[4].png' alt='4' 
                   className={`image-ship4 ${positionedShips.includes(4) ? 'positioned' : ''} ${selectedShip === 4 ? 'selected':''}`}
                   onClick={(event) => handleShipClick(4, event)}/>
+              <img src='./src/assets/warship-[5].png' alt='5' 
+                  className={`image-ship5 ${positionedShips.includes(5) ? 'positioned' : ''} ${selectedShip === 5 ? 'selected':''}`}
+                  onClick={(event) => handleShipClick(5, event)}/>
             </div>
             {selectedShip && <MiniShip shipLength={selectedShip} position={miniShipPosition} verticalPosition={verticalPos}/>}
           </div>

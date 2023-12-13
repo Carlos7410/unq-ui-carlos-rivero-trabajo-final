@@ -23,7 +23,7 @@ const HomeGame = () => {
     const [verticalShip, setVerticalShip] = useState(true)
     const [fitError, setFitError] = useState(false)
 
-    // Agregar barco a lista para marcarlo como ya posicionado
+
     const addShipPositioned = (lengthShip) => {
         setPositionedShips([...positionedShips, lengthShip])
         document.removeEventListener('keypress', handleKeyPress)
@@ -40,7 +40,7 @@ const HomeGame = () => {
         document.addEventListener('keypress', handleKeyPress);
     }, [])
 
-    // Esquina superior izquierda esta 0,0 sube row hacía abajo y column hacía la derecha
+    // Función que determina si hay espacio en el barco según limitaciones del tablero
     const checkSpaceForShip = (shipLength, row, column) => {
         if (verticalShip) {
             return row + (shipLength - 1) < 10
@@ -49,21 +49,19 @@ const HomeGame = () => {
         }
     }
 
-    // Funcion que determina si hay un barco en una de las celdas que ocuparía el nuevo barco
+    // Funcion que determina si se encuentra un barco o más en las celdas que ocuparía el nuevo barco
     const checkFreeSpaceForShip = (shipLength, row, column) => {
         if (verticalShip) {
             const sectionToCheck = board.slice(row, row + shipLength)
             return sectionToCheck.every(row => row[column] === 1)
         } else {
             var rowToCheck = board[row]
-            //console.log('Row taken :', rowToCheck)
             rowToCheck = rowToCheck.slice(column, column + shipLength)
-            console.log('Row cut :', rowToCheck)
             return rowToCheck.every(cell => cell === 1)
         }
     }
 
-    // Funciones que posicionan el nuevo barco según su orientación y la celda revisada
+    // Funciones que posicionan una porción del barco provisto según su orientación y la celda revisada
     const assignShipToCellX = (curBoard, rowIndex, row, columnIndex, column, shipLength) => {
         if (row == rowIndex && column === columnIndex) {
             return shipLength
@@ -102,7 +100,7 @@ const HomeGame = () => {
         return shipData ? shipData.verticalShip : false
     }
 
-    // Función principal
+    // Función principal para posicionar barcos
     const handleBlockClick = (row, column) => {
         if(shipSelectioned) {
             const checkingShipFits = checkSpaceForShip(shipSelectioned, row, column)
