@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
-import "./css/gameBoard.css"
-import "./css/shipsOnBoard.css"
-import SelectionShipSection from "./components/SelectionShip"
+import "../css/gameBoard.css"
+import "../css/shipsOnBoard.css"
+import SelectionShipSection from "../components/SelectionShip"
 import { useNavigate } from "react-router-dom"
 
 const HomeGame = () => {
@@ -104,7 +104,6 @@ const HomeGame = () => {
 
     // Función principal
     const handleBlockClick = (row, column) => {
-        console.log("Nothing yet " + row + " - " + column)
         if(shipSelectioned) {
             const checkingShipFits = checkSpaceForShip(shipSelectioned, row, column)
 
@@ -160,9 +159,6 @@ const HomeGame = () => {
                 <p style={{color:'black', fontSize:'18px'}}>No hay espacio para el barco o hay un barco bloqueando el paso</p> 
                 : <></>}
             <div>
-                <button onClick={() => navigate("/initial")}>Ver inicio</button>
-            </div>
-            <div>
                 {positionedShips.length === 4 ?
                 <button onClick={() => gameStart() } className="button-try"> Iniciar partida </button>
                 :
@@ -175,6 +171,3 @@ const HomeGame = () => {
 }
 
 export default HomeGame
-//<div>
-//                <button onClick={() => console.log(shipPositions) } className="button-try"> Try positions</button>
-//            </div> 

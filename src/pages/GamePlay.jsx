@@ -1,9 +1,9 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "./css/gameBoard.css"
-import "./css/shipsOnBoard.css"
-import "./css/gameplayBoard.css"
-import EnemyBoard from "./components/EnemyBoardData";
+import "../css/gameBoard.css"
+import "../css/shipsOnBoard.css"
+import "../css/gameplayBoard.css"
+import EnemyBoard from "../components/EnemyBoardData";
 import { SiFireship  } from "react-icons/si";
 import { ImCross  } from "react-icons/im";
 
@@ -55,7 +55,7 @@ const GamePlay = () => {
     }
 
     const restartGame = () => {
-        navigate("/")
+        navigate("/home")
     }
 
 
@@ -121,6 +121,7 @@ const GamePlay = () => {
     return (
         <div>
             <EnemyBoard setEnemy={setEnemyBoard}/>
+            <h2 className="title-gameplay">Derriba los cuatro barcos del enemigo antes que el CPU derribe los tuyos</h2>
             <div className="additional-info">
                 <p className="info-board">Tablero enemigo al que atacar</p>
                 <p className="info-board">Tu tablero a resistir los ataques</p>

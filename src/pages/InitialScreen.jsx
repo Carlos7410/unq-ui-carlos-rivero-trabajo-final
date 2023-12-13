@@ -6,7 +6,7 @@ const InitialScreen = () => {
     const navigation = useNavigate()
 
     const moveToSelectionBoard = () => {
-        navigation("/")
+        navigation("/home")
     }
 
     return (
@@ -26,5 +26,3 @@ const InitialScreen = () => {
 }
 
 export default InitialScreen
-//alignItems: 'center',
-//justifyContent: 'center'

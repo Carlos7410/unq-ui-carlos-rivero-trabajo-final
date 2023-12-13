@@ -1,8 +1,8 @@
 import { Component } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css'
-import HomeGame from './HomeGame'
-import GamePlay from './GamePlay'
+import HomeGame from './pages/HomeGame'
+import GamePlay from './pages/GamePlay'
 import InitialScreen from './pages/InitialScreen'
 
 export default class App extends Component {
@@ -13,9 +13,9 @@ export default class App extends Component {
       <>
         <Router>
           <Routes>
-            <Route exact path="/" element={<HomeGame />} />
+            <Route exact path="/" element={<InitialScreen />}/>
+            <Route exact path="/home" element={<HomeGame />} />
             <Route exact path="/gameplay" element={<GamePlay />}/>
-            <Route exact path="/initial" element={<InitialScreen />}/>
           </Routes>
         </Router>       
       </>
