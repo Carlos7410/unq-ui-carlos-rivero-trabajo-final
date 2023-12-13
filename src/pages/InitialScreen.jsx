@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import "../css/InitialScreen.css"
+import "../css/initialScreen.css"
 
 const InitialScreen = () => {
 
