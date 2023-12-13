@@ -1,0 +1,26 @@
+.title-section {
+    position: absolute;
+    background-color: darkcyan;
+    width: 40%;
+    height: 32%;
+    opacity: 0.85;
+    border-radius: 30px;
+    margin-left: 30%;
+    align-items: center;
+    margin-top: 15%;
+    border: 5px dotted palegoldenrod;
+}
+
+.title {
+    font-size: 5rem;
+    color: black;
+    text-shadow: white 1px 1px;;
+    
+}
+
+.button-begin {
+    width: 30%;
+    height: 22%;
+    background-color: aqua;
+    border: 3px solid black;
+}

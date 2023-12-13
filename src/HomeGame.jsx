@@ -160,6 +160,9 @@ const HomeGame = () => {
                 <p style={{color:'black', fontSize:'18px'}}>No hay espacio para el barco o hay un barco bloqueando el paso</p> 
                 : <></>}
             <div>
+                <button onClick={() => navigate("/initial")}>Ver inicio</button>
+            </div>
+            <div>
                 {positionedShips.length === 4 ?
                 <button onClick={() => gameStart() } className="button-try"> Iniciar partida </button>
                 :

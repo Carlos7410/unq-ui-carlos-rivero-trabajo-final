@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css'
 import HomeGame from './HomeGame'
 import GamePlay from './GamePlay'
+import InitialScreen from './pages/InitialScreen'
 
 export default class App extends Component {
 
@@ -14,6 +15,7 @@ export default class App extends Component {
           <Routes>
             <Route exact path="/" element={<HomeGame />} />
             <Route exact path="/gameplay" element={<GamePlay />}/>
+            <Route exact path="/initial" element={<InitialScreen />}/>
           </Routes>
         </Router>       
       </>
