@@ -81,7 +81,6 @@ const GamePlay = () => {
 
 
     const handleClickAttack = (cell, row, column) => {
-        console.log('Value on:', cell)
         if (enemyBoard[row][column] != 1) {
             setCountPlayerHit((countPlayerHit) => countPlayerHit + 1)
         }

@@ -26,7 +26,6 @@ const HomeGame = () => {
 
     const addShipPositioned = (lengthShip) => {
         setPositionedShips([...positionedShips, lengthShip])
-        document.removeEventListener('keypress', handleKeyPress)
         setVerticalShip(true)
     }
 
@@ -158,7 +157,7 @@ const HomeGame = () => {
                 : <></>}
             <div>
                 {positionedShips.length === 4 ?
-                <button onClick={() => gameStart() } className="button-try"> Iniciar partida </button>
+                <button onClick={() => gameStart() } className="button-play"> Iniciar partida </button>
                 :
                 <></>
                 }
